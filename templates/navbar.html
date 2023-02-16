@@ -1,0 +1,24 @@
+<div class="navbar">
+    <nav class="first">
+        <ul>
+            <li><a class="nav-link" href="{% url 'home-page' %}">Home</a></li>
+            <li><a class="nav-link" href="{% url 'donation-page' %}">Donate Now</a></li>
+        </ul>
+    </nav>
+    <header>
+        <div class="logo">
+            <a style="width: 98px;" href="{% url 'home-page' %}"></a>
+        </div>
+    </header>
+    <nav class="second">
+        <ul>
+            {% if request.user.is_authenticated %}
+                <li><a class="nav-link" href="{% url 'profile' %}">Profile</a></li>
+                <li><a class="nav-link" href="{% url 'sign-out' %}">Sign Out</a></li>
+            {% else %}
+                <li><a class="nav-link" href="{% url 'sign-in' %}">Sign In</a></li>
+                <li><a class="nav-link" href="{% url 'sign-up' %}">Register</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+</div>

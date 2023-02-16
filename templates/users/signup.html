@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <form action="" method="POST">
+        {% csrf_token %}
+        <fieldset class="auth-form">
+            <legend>Register</legend>
+            <div class="form-fields">
+                <label for="email">Email<br>
+                    <input type="email" id="name" name="email" placeholder="e.g. someone@example.com">
+                </label>
+                <label for="password1">Password<br>
+                    <input type="password" id="password1" name="password1" placeholder="password">
+                </label>
+                <label for="password2">Confirm Password<br>
+                    <input type="password" id="password2" name="password2" placeholder="confirm password">
+                </label>
+                <div class="button">
+                    <input type="submit" value="Register">
+                </div>
+            </div>
+            <div class="form-down">
+                <p>Already have an account? <a href="{% url 'sign-in' %}">Sign In</a></p>
+            </div>
+        </fieldset>
+    </form>
+{% endblock %}

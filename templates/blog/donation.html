@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <section>
+        <form action="" method="POST">
+            <fieldset style="margin-bottom: 50px;">
+                {% csrf_token %}
+                <legend>Donate Now</legend>
+                <div class="form-fields">
+                    <select name="options" id="options">
+                        <option value="">(select one)</option>
+                        <option value="1">For Cancer Patients</option>
+                        <option value="2">For Flood Effected People</option>
+                    </select>
+                    <label style="margin-top: 30px;" for="message">Type Message<br>
+                        <textarea name="message" id="message" placeholder="leave a message about our startup..."></textarea>
+                    </label>
+                    <label for="donation">
+                        <input type="number" id="donation" name="donation" min="2" max="1000" placeholder="How much you want to donate?">
+                    </label>
+                    <div class="button">
+                        <input type="submit" value="Donate">
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </section>
+{% endblock %}
